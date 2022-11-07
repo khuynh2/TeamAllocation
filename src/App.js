@@ -1,6 +1,8 @@
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
+import Nav from './Nav';
+import NotFound from './NotFound';
 import Employees from './Employee';
 import GroupedTeamMembers from './GroupedTeamMembers';
 import { useEffect, useState } from 'react';
@@ -124,7 +126,7 @@ function App() {
   return (
     <div>
       <Router>
-
+        <Nav/>
         <Header selectedTeam={selectedTeam}
           teamMemberCount={employees.filter((employee) => employee.teamName === selectedTeam).length} />
         <Routes>
@@ -137,6 +139,7 @@ function App() {
           }>
           </Route>
           <Route path = "/GroupedTeamMembers" element = {<GroupedTeamMembers/>}></Route>
+          <Route path = "/NotFound" element = {<NotFound/>}></Route>
 
         </Routes>
         <Footer />
